@@ -1,0 +1,83 @@
+body{
+    background: linear-gradient(to right, #212121ec, #112031dc);
+    max-width: 1200px;
+}
+.controls{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+button{
+    width: 4.5rem;
+    height: 4.5rem;
+    background-color: #FEF1E6;
+    border-radius: 50%;
+    cursor: pointer;
+}
+button i{
+    font-size: 1.2rem;
+    color: #212121;
+}
+i.more{
+    text-align: center;
+}
+h2{
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    padding: 20px 0px;
+    color: #F7F6F2;
+}
+.hastags{
+    display: flex;
+    gap: 10px;
+}
+a{
+    position: relative;
+    top: -25px;
+    font-size: 15px;
+    font-style: italic;
+    font-family: 'Poppins',sans-serif;
+    color: #C4C4C4;
+}
+.wrapper-player{
+    width: 80%;
+    height: 520px;
+    margin: 0px auto;
+    overflow: hidden;
+    display: grid;
+    place-items: center;
+    border-radius: 5px;
+    background-color: rgba(255,255,255,.15);
+    backdrop-filter: blur(5px);
+}
+#player{
+    width: 50%;
+    margin: 0 auto;
+    display: none;
+}
+.cover{
+    height: 250px;
+    width: 250px;
+    background-image: url('/imgs/cover-photo.jpg');
+    background-position: center;
+    background-size: cover;
+    margin: 10px;
+    box-shadow: 0px 0px 10px 0px #a3a2a2e0;
+    border-radius: 2px;
+}
+.seek-bar{
+    -webkit-appearance: none;
+    width: 90%;
+    height: 5px;
+    border-radius: 10px;
+    background: #C4C4C4;
+    overflow: hidden;
+    cursor: pointer;
+}
+.seek-bar::-webkit-slider-thumb{
+    width: 1px;
+    height: 20px;
+    box-shadow:  -400px 0 0 400px #212121;
+}

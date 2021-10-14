@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <!----- Custom iframe video ------>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/CDNSFree2/Plyr/plyr.css" />
+    <!------ Font Awesome cdn ------>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <h2>ASMR GIBI | Hands sounds</h2>
+    <div class="wrapper-player">
+        <div class="cover"></div>
+        <div class="hastags"><a href="#">#HandsSound</a> <a href="#"> #Sleep</a></div>
+        <input type="range" value="0" class="seek-bar">
+        <div class="controls">
+            <!-----Backward----->
+            <button><i class="fas fa-step-backward more"></i></button>
+            <!-----Play------>
+            <button id="change-bt" onclick="createScript()"><i class="fas fa-play" id="play-icon"></i></button>
+            <!----Forward----->
+            <button><i class="fas fa-step-forward more"></i></button>
+        </div>
+        
+        
+    </div>  
+    <br>
+    <div id="player"></div>
+
+    <script>
+
+        function createScript() {
+            var tag = document.createElement('script');
+            tag.src = "https://www.youtube.com/iframe_api";
+            var firstScriptTag = document.getElementsByTagName('script')[0];
+            firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+            document.getElementById('play-icon').className ="fas fa-pause";
+        }
+
+        
+
+
+
+        var player;
+
+        
+        function onYouTubeIframeAPIReady() {
+            player = new YT.Player('player', {
+                height: '360',
+                width: '640',
+                videoId: 'gawgeV4gNNU',
+                events: {
+                    'onReady': onPlayerReady,
+                }
+            });
+        }
+        function onPlayerReady(event) {
+
+            event.target.playVideo();
+            event.target.unMute();
+            
+        }
+        
+
+
+
+
+        
+        
+
+    </script>
+    <!------Custom iframe video ----->
+    <script src="https://cdn.jsdelivr.net/gh/CDNSFree2/Plyr/plyr.js"></script>
+
+
+</body>
+</html>
